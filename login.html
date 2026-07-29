@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar • StockSmart</title>
+    <!-- Tailwind CSS para design premium -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <style>
+        .form-container {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+
+    <!-- Gradientes de Fundo Decorativos (Premium SaaS Glow) -->
+    <div class="absolute w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px] -top-40 -left-40 pointer-events-none"></div>
+    <div class="absolute w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[130px] -bottom-40 -right-40 pointer-events-none"></div>
+
+    <div class="w-full max-w-md bg-slate-900/60 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-2xl relative z-10 fade-in">
+        
+        <!-- Brand/Logo Header -->
+        <div class="flex flex-col items-center text-center mb-8">
+            <div class="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 mb-3">
+                <i data-lucide="package" class="w-8 h-8"></i>
+            </div>
+            <h1 class="text-2xl font-extrabold tracking-tight text-white">StockSmart</h1>
+            <p class="text-xs text-slate-400 mt-1 font-medium">Controle Inteligente de Grade de Produtos e Margem Real</p>
+        </div>
+
+        <!-- Alertas de Feedback -->
+        <div id="alert-box" class="hidden mb-5 p-3 rounded-lg text-xs font-semibold flex items-center gap-2 border">
+            <i id="alert-icon" class="w-4 h-4 shrink-0"></i>
+            <span id="alert-message"></span>
+        </div>
+
+        <!-- 🔑 FORMULÁRIO DE LOGIN (ENTRAR) -->
+        <div id="login-container" class="form-container">
+            <h2 class="text-lg font-bold text-white mb-4">Acesse sua conta</h2>
+            <form onsubmit="realizarLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail de Acesso</label>
+                    <div class="relative">
+                        <i data-lucide="mail" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="email" id="login-email" required placeholder="seuemail@comercial.com" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Senha</label>
+                    <div class="relative">
+                        <i data-lucide="lock" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="password" id="login-senha" required placeholder="••••••••" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg text-sm transition shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-2">
+                    Entrar no Painel <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </form>
+            <p class="text-xs text-center text-slate-400 mt-6">
+                Não tem uma conta? <button onclick="toggleForm('register')" class="text-emerald-400 hover:underline font-semibold">Cadastre-se grátis</button>
+            </p>
+        </div>
+
+        <!-- 📝 FORMULÁRIO DE CADASTRO (REGISTRAR) -->
+        <div id="register-container" class="form-container hidden">
+            <h2 class="text-lg font-bold text-white mb-4">Crie sua conta</h2>
+            <form onsubmit="realizarCadastro(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Seu Nome</label>
+                    <div class="relative">
+                        <i data-lucide="user" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="text" id="reg-nome" required placeholder="Ex: João Silva" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Nome do seu Painel / Loja</label>
+                    <div class="relative">
+                        <i data-lucide="store" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="text" id="reg-empresa" required placeholder="Ex: Clínica de Estética Bella" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Tipo de Uso do Estoque</label>
+                    <div class="relative">
+                        <i data-lucide="activity" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <select id="reg-modo" required class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                            <option value="venda">Venda Comercial (Roupas, sapatos, eletrônicos, etc.)</option>
+                            <option value="consumo">Consumo Interno / Clínico (Clínicas de Estética, consultórios, etc.)</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail de Acesso</label>
+                    <div class="relative">
+                        <i data-lucide="mail" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="email" id="reg-email" required placeholder="seuemail@comercial.com" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Senha de Acesso</label>
+                    <div class="relative">
+                        <i data-lucide="lock" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
+                        <input type="password" id="reg-senha" required placeholder="Mínimo 6 caracteres" class="w-full bg-slate-950/80 border border-slate-800 rounded-lg pl-10 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg text-sm transition shadow-lg shadow-indigo-600/10 flex items-center justify-center gap-2">
+                    Criar Minha Conta <i data-lucide="check" class="w-4 h-4"></i>
+                </button>
+            </form>
+            <p class="text-xs text-center text-slate-400 mt-6">
+                Já possui uma conta? <button onclick="toggleForm('login')" class="text-indigo-400 hover:underline font-semibold">Faça login</button>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- 🧠 LÓGICA DE LOGIN E REGISTRO -->
+    <script>
+        // Redirecionamento de segurança se já logado
+        if (localStorage.getItem('stocksmart_session')) {
+            window.location.href = "index.html";
+        }
+
+        // Inicializa os ícones
+        lucide.createIcons();
+
+        // 📁 INICIALIZAÇÃO DINÂMICA DO FIREBASE
+        const firebaseConfigRaw = localStorage.getItem('stocksmart_firebase_config');
+        let firebaseInitialized = false;
+        let auth = null;
+        let db = null;
+
+        if (firebaseConfigRaw) {
+            try {
+                const firebaseConfig = JSON.parse(firebaseConfigRaw);
+                if (firebaseConfig && firebaseConfig.apiKey && firebaseConfig.projectId) {
+                    firebase.initializeApp(firebaseConfig);
+                    auth = firebase.auth();
+                    db = firebase.firestore();
+                    firebaseInitialized = true;
+                    console.log("Firebase inicializado com sucesso em login.html!");
+                }
+            } catch (err) {
+                console.error("Erro ao inicializar Firebase com as credenciais salvas:", err);
+            }
+        }
+
+        // Alternar entre telas Login / Registro
+        function toggleForm(formType) {
+            const login = document.getElementById('login-container');
+            const register = document.getElementById('register-container');
+            
+            esconderAlerta();
+
+            if (formType === 'register') {
+                login.classList.add('hidden');
+                register.classList.remove('hidden');
+                document.title = "Cadastrar • StockSmart";
+            } else {
+                register.classList.add('hidden');
+                login.classList.remove('hidden');
+                document.title = "Entrar • StockSmart";
+            }
+        }
+
+        // Funções de feedback de alerta
+        function exibirAlerta(tipo, mensagem) {
+            const box = document.getElementById('alert-box');
+            const messageSpan = document.getElementById('alert-message');
+            const icon = document.getElementById('alert-icon');
+
+            box.className = "mb-5 p-3 rounded-lg text-xs font-semibold flex items-center gap-2 border fade-in";
+            messageSpan.innerText = mensagem;
+
+            if (tipo === 'erro') {
+                box.classList.add('bg-rose-950/40', 'border-rose-800/80', 'text-rose-400');
+                icon.setAttribute('data-lucide', 'alert-circle');
+            } else {
+                box.classList.add('bg-emerald-950/40', 'border-emerald-800/80', 'text-emerald-400');
+                icon.setAttribute('data-lucide', 'check-circle-2');
+            }
+
+            box.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        // Exibir indicador de modo Firebase
+        if (firebaseInitialized) {
+            exibirAlerta('sucesso', 'Conectado à Nuvem (Firebase Ativo). Suas contas e estoque agora são sincronizados na nuvem.');
+            setTimeout(esconderAlerta, 5000);
+        }
+
+        function esconderAlerta() {
+            document.getElementById('alert-box').classList.add('hidden');
+        }
+
+        // AÇÃO: REALIZAR CADASTRO (REGISTRAR)
+        function realizarCadastro(event) {
+            event.preventDefault();
+            esconderAlerta();
+
+            const nome = document.getElementById('reg-nome').value.trim();
+            const empresa = document.getElementById('reg-empresa').value.trim();
+            const modo = document.getElementById('reg-modo').value;
+            const email = document.getElementById('reg-email').value.trim().toLowerCase();
+            const senha = document.getElementById('reg-senha').value;
+
+            if (senha.length < 6) {
+                exibirAlerta('erro', 'A senha precisa ter pelo menos 6 caracteres.');
+                return;
+            }
+
+            if (firebaseInitialized) {
+                // FLUXO FIREBASE NUVEM
+                exibirAlerta('sucesso', 'Criando conta na nuvem...');
+                auth.createUserWithEmailAndPassword(email, senha)
+                    .then((userCredential) => {
+                        // Salvar preferências e perfil na nuvem
+                        return db.collection('users').doc(email).set({
+                            nome: nome,
+                            empresa: empresa,
+                            modoOperacao: modo,
+                            email: email,
+                            moeda: "BRL",
+                            limiteCritico: 3,
+                            dataCadastro: Date.now()
+                        });
+                    })
+                    .then(() => {
+                        // Sinalizar que requer migração caso o usuário tenha dados Locais antigos para esse email
+                        localStorage.setItem(`stocksmart_migration_pending_${email}`, 'true');
+                        exibirAlerta('sucesso', 'Conta criada com sucesso! Redirecionando...');
+                        setTimeout(() => {
+                            localStorage.setItem('stocksmart_session', email);
+                            window.location.href = "index.html";
+                        }, 1000);
+                    })
+                    .catch((error) => {
+                        console.error("Erro no cadastro Firebase:", error);
+                        let errMsg = "Ocorreu um erro no cadastro. Tente novamente.";
+                        if (error.code === 'auth/email-already-in-use') {
+                            errMsg = "Este e-mail já está sendo utilizado por outra conta.";
+                        } else if (error.code === 'auth/invalid-email') {
+                            errMsg = "E-mail inválido.";
+                        } else if (error.code === 'auth/weak-password') {
+                            errMsg = "A senha informada é muito fraca.";
+                        }
+                        exibirAlerta('erro', errMsg);
+                    });
+            } else {
+                // FLUXO LOCAL STORAGE
+                // Buscar usuários existentes
+                let usuarios = JSON.parse(localStorage.getItem('stocksmart_users')) || [];
+
+                // Verificar se o email já existe
+                if (usuarios.some(u => u.email === email)) {
+                    exibirAlerta('erro', 'Este e-mail já está cadastrado.');
+                    return;
+                }
+
+                // Registrar novo usuário
+                const novoUsuario = {
+                    nome: nome,
+                    empresa: empresa,
+                    modoOperacao: modo,
+                    email: email,
+                    senha: senha
+                };
+
+                usuarios.push(novoUsuario);
+                localStorage.setItem('stocksmart_users', JSON.stringify(usuarios));
+
+                // Inicializar base de dados vazia para o usuário com a preferência de modo de operação
+                const dadosUsuario = {
+                    produtos: [],
+                    variacoes: [],
+                    movimentacoes: [],
+                    config: {
+                        empresa: empresa,
+                        proprietario: nome,
+                        email: email,
+                        moeda: "BRL",
+                        limiteCritico: 3,
+                        modoOperacao: modo
+                    }
+                };
+                localStorage.setItem(`stocksmart_data_${email}`, JSON.stringify(dadosUsuario));
+
+                exibirAlerta('sucesso', 'Conta criada com sucesso localmente! Redirecionando...');
+
+                // Criar sessão e redirecionar
+                setTimeout(() => {
+                    localStorage.setItem('stocksmart_session', email);
+                    window.location.href = "index.html";
+                }, 1200);
+            }
+        }
+
+        // AÇÃO: REALIZAR LOGIN (ENTRAR)
+        function realizarLogin(event) {
+            event.preventDefault();
+            esconderAlerta();
+
+            const email = document.getElementById('login-email').value.trim().toLowerCase();
+            const senha = document.getElementById('login-senha').value;
+
+            if (firebaseInitialized) {
+                // FLUXO FIREBASE NUVEM
+                exibirAlerta('sucesso', 'Autenticando...');
+                auth.signInWithEmailAndPassword(email, senha)
+                    .then((userCredential) => {
+                        // Buscar informações do perfil para garantir consistência
+                        return db.collection('users').doc(email).get();
+                    })
+                    .then((docSnapshot) => {
+                        if (docSnapshot.exists) {
+                            const data = docSnapshot.data();
+                            // Garantir que as informações de sessão estejam sincronizadas localmente também
+                            let usuarios = JSON.parse(localStorage.getItem('stocksmart_users')) || [];
+                            const idx = usuarios.findIndex(u => u.email === email);
+                            if (idx !== -1) {
+                                usuarios[idx].empresa = data.empresa;
+                                usuarios[idx].nome = data.nome;
+                                usuarios[idx].modoOperacao = data.modoOperacao;
+                            } else {
+                                usuarios.push({
+                                    nome: data.nome,
+                                    empresa: data.empresa,
+                                    modoOperacao: data.modoOperacao,
+                                    email: email
+                                });
+                            }
+                            localStorage.setItem('stocksmart_users', JSON.stringify(usuarios));
+                        }
+                        exibirAlerta('sucesso', 'Entrada autorizada! Carregando painel...');
+                        setTimeout(() => {
+                            localStorage.setItem('stocksmart_session', email);
+                            window.location.href = "index.html";
+                        }, 1000);
+                    })
+                    .catch((error) => {
+                        console.error("Erro no login Firebase:", error);
+                        let errMsg = "E-mail ou senha incorretos.";
+                        if (error.code === 'auth/invalid-email') {
+                            errMsg = "Formato de e-mail inválido.";
+                        } else if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                            errMsg = "E-mail ou senha incorretos.";
+                        }
+                        exibirAlerta('erro', errMsg);
+                    });
+            } else {
+                // FLUXO LOCAL STORAGE
+                let usuarios = JSON.parse(localStorage.getItem('stocksmart_users')) || [];
+
+                const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+
+                if (!usuarioEncontrado) {
+                    exibirAlerta('erro', 'E-mail ou senha incorretos localmente. Tente novamente.');
+                    return;
+                }
+
+                exibirAlerta('sucesso', 'Autenticação bem-sucedida localmente! Entrando no painel...');
+
+                // Criar sessão e redirecionar
+                setTimeout(() => {
+                    localStorage.setItem('stocksmart_session', email);
+                    window.location.href = "index.html";
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

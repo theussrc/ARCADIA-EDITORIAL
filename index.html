@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcadia • Biblioteca Premium de Guías & Prompts Maestros de IA</title>
+    <meta name="description" content="Accede a una biblioteca premium de sistemas, guías metodológicas y Prompts Maestros diseñada para ayudarte a crear, lanzar y hacer crecer tu negocio utilizando IA.">
+    
+    <!-- Google Fonts: Newsreader (Editorial Serif) & Plus Jakarta Sans / Inter (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Editorial CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arcadia</span>
+                <span class="logo-tag">Editorial</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#que-es" class="nav-link">¿Qué es Arcadia?</a>
+                <a href="#recibirás" class="nav-link">Contenido</a>
+                <a href="#biblioteca" class="nav-link">Biblioteca</a>
+                <a href="#vista-previa" class="nav-link">Vista previa</a>
+                <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+                <a href="#precios" class="nav-link">Precios</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="#precios" class="btn btn-primary btn-sm">
+                    <span>Acceder Ahora</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-inner">
+                <a href="#que-es" class="mobile-link">¿Qué es Arcadia?</a>
+                <a href="#recibirás" class="mobile-link">Contenido</a>
+                <a href="#biblioteca" class="mobile-link">Biblioteca</a>
+                <a href="#vista-previa" class="mobile-link">Vista previa</a>
+                <a href="#como-funciona" class="mobile-link">Cómo funciona</a>
+                <a href="#precios" class="mobile-link">Precios</a>
+                <div class="mobile-cta">
+                    <a href="#precios" class="btn btn-primary w-full text-center">Acceder Ahora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section">
+        <div class="hero-bg-accent"></div>
+        <div class="container hero-container">
+            <!-- Left Column -->
+            <div class="hero-content">
+                <div class="editorial-badge">
+                    <i data-lucide="book-open"></i>
+                    <span>Biblioteca Digital Educativa</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    Construye un negocio utilizando <span class="serif-accent">Inteligencia Artificial.</span>
+                </h1>
+
+                <p class="hero-subheadline">
+                    Accede a una biblioteca premium de sistemas, guías y Prompts Maestros diseñada para ayudarte a crear, lanzar y hacer crecer tu negocio utilizando IA.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#precios" class="btn btn-primary btn-lg shadow-elevation">
+                        <span>Acceder Ahora</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#biblioteca" class="btn btn-secondary btn-lg">
+                        <span>Ver la Biblioteca</span>
+                        <i data-lucide="chevron-down"></i>
+                    </a>
+                </div>
+
+                <div class="hero-badges-grid">
+                    <div class="hero-badge-item">
+                        <i data-lucide="check" class="badge-icon"></i>
+                        <span>Acceso inmediato</span>
+                    </div>
+                    <div class="hero-badge-item">
+                        <i data-lucide="check" class="badge-icon"></i>
+                        <span>Área de miembros</span>
+                    </div>
+                    <div class="hero-badge-item">
+                        <i data-lucide="check" class="badge-icon"></i>
+                        <span>Compatible con ChatGPT</span>
+                    </div>
+                    <div class="hero-badge-item">
+                        <i data-lucide="check" class="badge-icon"></i>
+                        <span>Actualizaciones incluidas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Realistic Publication Stack Mockup -->
+            <div class="hero-visual">
+                <div class="publication-mockup-stage">
+                    
+                    <!-- Stacked PDF Guide Covers Behind -->
+                    <div class="guide-cover guide-cover-back float-slow">
+                        <div class="cover-header">
+                            <span class="cover-vol">VOL. II</span>
+                            <span class="cover-tag">ARCADIA EDITORIAL</span>
+                        </div>
+                        <h4 class="cover-title">Creación de Contenido con IA</h4>
+                        <p class="cover-desc">Guía Metodológica & Prompts Maestros</p>
+                        <div class="cover-footer">
+                            <span>5 Guías • 5 Prompts</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-cover guide-cover-mid float-medium">
+                        <div class="cover-header">
+                            <span class="cover-vol">VOL. III</span>
+                            <span class="cover-tag">PRÓXIMAMENTE</span>
+                        </div>
+                        <h4 class="cover-title">Sistema de Ventas con IA</h4>
+                        <p class="cover-desc">Conversion Copywriting & Agentes</p>
+                        <div class="cover-footer">
+                            <span>Suscripción Incluida</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Opened Book / Guide Mockup Front -->
+                    <div class="opened-guide-book float-fast">
+                        <div class="book-binder"></div>
+                        <!-- Page Left -->
+                        <div class="book-page page-left">
+                            <div class="page-header">
+                                <span>ARCADIA METHODOLOGY</span>
+                                <span>PÁG. 14</span>
+                            </div>
+                            <h5 class="page-chapter">CAPÍTULO 03</h5>
+                            <h3 class="page-title">El Prompt Maestro de Lanzamiento</h3>
+                            <p class="page-text">
+                                "Copia esta estructura de variables en ChatGPT para generar un análisis completo del perfil de cliente ideal..."
+                            </p>
+                            <div class="page-prompt-box">
+                                <div class="prompt-box-header">
+                                    <i data-lucide="terminal"></i>
+                                    <span>PROMPT MAESTRO #01</span>
+                                </div>
+                                <code class="prompt-snippet">Actúa como un Director de Estrategia de Lanzamiento. Analiza la propuesta de valor...</code>
+                            </div>
+                        </div>
+
+                        <!-- Page Right -->
+                        <div class="book-page page-right">
+                            <div class="page-header">
+                                <span>SISTEMA 01</span>
+                                <span>GUÍA PRÁCTICA</span>
+                            </div>
+                            <div class="page-checklist">
+                                <div class="check-item"><span class="check-box">✓</span> <span>Validación de Oferta</span></div>
+                                <div class="check-item"><span class="check-box">✓</span> <span>Copywriting de Secuencia</span></div>
+                                <div class="check-item"><span class="check-box">✓</span> <span>Hook & Titulares Virales</span></div>
+                            </div>
+                            <div class="page-badge-stamp">
+                                <span>EDICIÓN PREMIUM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: FIRST RESULTS -->
+    <section class="section section-first-results" id="resultados">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Resultados Directos</span>
+                <h2 class="section-title">¿Qué podrás hacer desde hoy?</h2>
+                <p class="section-description max-w-3xl">
+                    Arcadia no es una colección de prompts.<br>
+                    Es una biblioteca de sistemas prácticos diseñada para ayudarte a resolver problemas reales utilizando Inteligencia Artificial.
+                </p>
+            </div>
+
+            <div class="grid grid-3 gap-lg first-results-grid">
+                <!-- CARD 1 -->
+                <div class="card result-card">
+                    <div class="result-icon">💡</div>
+                    <h3 class="result-title">Encontrar una idea de negocio rentable</h3>
+                    <p class="result-desc">Descubre oportunidades utilizando Inteligencia Artificial y aprende a identificar negocios con potencial real.</p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card result-card">
+                    <div class="result-icon">🚀</div>
+                    <h3 class="result-title">Lanzar un negocio paso a paso</h3>
+                    <p class="result-desc">Aprende cómo validar una idea, crear una oferta y preparar un lanzamiento utilizando un sistema práctico.</p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card result-card">
+                    <div class="result-icon">✍️</div>
+                    <h3 class="result-title">Crear contenido de alto impacto</h3>
+                    <p class="result-desc">Utiliza Prompts Maestros para generar contenido profesional de forma rápida y organizada.</p>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="card result-card">
+                    <div class="result-icon">🎯</div>
+                    <h3 class="result-title">Planificar una estrategia de contenido</h3>
+                    <p class="result-desc">Organiza publicaciones con un método claro para mantener consistencia y ahorrar tiempo.</p>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="card result-card">
+                    <div class="result-icon">🤖</div>
+                    <h3 class="result-title">Trabajar con especialistas IA</h3>
+                    <p class="result-desc">Accede a Prompts Maestros diseñados para ayudarte a resolver tareas específicas utilizando ChatGPT.</p>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="card result-card">
+                    <div class="result-icon">⚡</div>
+                    <h3 class="result-title">Aplicar inmediatamente</h3>
+                    <p class="result-desc">Abre una guía, sigue el método, copia el Prompt Maestro y comienza a obtener resultados desde el primer día.</p>
+                </div>
+            </div>
+
+            <!-- Highlighted Box Below Cards -->
+            <div class="action-highlight-box">
+                <div class="highlight-content text-center max-w-3xl">
+                    <span class="highlight-badge">PRÁCTICA Y EJECUCIÓN</span>
+                    <h3 class="highlight-headline">Menos teoría. Más acción.</h3>
+                    <p class="highlight-desc">Cada sistema está diseñado para resolver un problema específico mediante un proceso claro, una guía práctica y un Prompt Maestro listo para utilizar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SOCIAL PROOF / STATS -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Estándar Educativo</span>
+                <h2 class="section-title">Más que una colección de prompts.</h2>
+            </div>
+
+            <div class="grid grid-4 gap-md">
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Guías Premium</span>
+                    <p class="stat-desc">Métodos detallados paso a paso</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Prompts Maestros</span>
+                    <p class="stat-desc">Especialistas IA en código claro</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Sistemas Completos</span>
+                    <p class="stat-desc">Estructuras operativas listas</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Aplicación práctica</span>
+                    <p class="stat-desc">Sin relleno ni teoría abstracta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHAT IS ARCADIA -->
+    <section class="section section-gray" id="que-es">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">La Propuesta</span>
+                <h2 class="section-title">¿Qué es Arcadia?</h2>
+                <p class="section-description max-w-3xl">
+                    Arcadia es una biblioteca premium creada para emprendedores, freelancers, empresas y creadores de contenido que desean aprender a utilizar Inteligencia Artificial mediante sistemas prácticos y metodologías paso a paso.
+                </p>
+            </div>
+
+            <div class="grid grid-3 gap-lg">
+                <!-- Card 1 -->
+                <div class="card card-editorial">
+                    <div class="editorial-card-icon">
+                        <i data-lucide="book-open-text"></i>
+                    </div>
+                    <h3 class="card-title">Guías Premium</h3>
+                    <p class="card-text">
+                        Métodos claros y prácticos para resolver problemas reales. Paso a paso estructurado con precisión.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card card-editorial">
+                    <div class="editorial-card-icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="card-title">Prompts Maestros</h3>
+                    <p class="card-text">
+                        Especialistas IA listos para copiar y utilizar en ChatGPT, Claude o cualquier modelo avanzado.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card card-editorial">
+                    <div class="editorial-card-icon">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <h3 class="card-title">Biblioteca Viva</h3>
+                    <p class="card-text">
+                        Nuevos sistemas añadidos constantemente sin cobros adicionales para los miembros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WHAT YOU RECEIVE -->
+    <section class="section" id="recibirás">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Inventario de Contenido</span>
+                <h2 class="section-title">Todo lo que recibirás</h2>
+                <p class="section-description">
+                    Acceso completo e inmediato al ecosistema educativo de Arcadia.
+                </p>
+            </div>
+
+            <div class="grid grid-3 gap-md">
+                <div class="card item-receive-card">
+                    <div class="item-number">01</div>
+                    <h4 class="item-title">15 Guías Premium</h4>
+                    <p class="item-desc">Manuales paso a paso con metodología de alto rendimiento.</p>
+                </div>
+
+                <div class="card item-receive-card">
+                    <div class="item-number">02</div>
+                    <h4 class="item-title">15 Prompts Maestros</h4>
+                    <p class="item-desc">Comandos avanzados de ingeniería de contexto listos para copiar.</p>
+                </div>
+
+                <div class="card item-receive-card">
+                    <div class="item-number">03</div>
+                    <h4 class="item-title">2 Sistemas completos</h4>
+                    <p class="item-desc">Frameworks de Lanzamiento y Creación de Contenido.</p>
+                </div>
+
+                <div class="card item-receive-card">
+                    <div class="item-number">04</div>
+                    <h4 class="item-title">Área de miembros</h4>
+                    <p class="item-desc">Plataforma privada, intuitiva y organizada por módulos.</p>
+                </div>
+
+                <div class="card item-receive-card">
+                    <div class="item-number">05</div>
+                    <h4 class="item-title">Acceso inmediato</h4>
+                    <p class="item-desc">Credenciales automáticas a tu email tras la inscripción.</p>
+                </div>
+
+                <div class="card item-receive-card">
+                    <div class="item-number">06</div>
+                    <h4 class="item-title">Actualizaciones futuras incluidas</h4>
+                    <p class="item-desc">Todos los nuevos sistemas que lancemos serán 100% tuyos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CURRENT LIBRARY -->
+    <section class="section section-gray" id="biblioteca">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Colección Actual</span>
+                <h2 class="section-title">Biblioteca Arcadia</h2>
+                <p class="section-description">
+                    Sistemas prácticos diseñados para ser aplicados desde el primer día.
+                </p>
+            </div>
+
+            <div class="grid grid-2 gap-xl">
+                <!-- System 1 -->
+                <div class="card system-editorial-card">
+                    <div class="system-header">
+                        <span class="system-emoji">🚀</span>
+                        <div class="system-badges">
+                            <span class="badge-pill">10 Guías Premium</span>
+                            <span class="badge-pill">10 Prompts Maestros</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="system-title">Sistema de Lanzamiento de Negocios</h3>
+                    <p class="system-desc">
+                        Aprende desde la idea hasta el lanzamiento. Todo la estructura para validar, empaquetar y posicionar tu oferta en el mercado.
+                    </p>
+
+                    <div class="system-footer">
+                        <button onclick="openModal('lanzamiento')" class="btn btn-secondary w-full">
+                            <span>Explorar Sistema</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- System 2 -->
+                <div class="card system-editorial-card">
+                    <div class="system-header">
+                        <span class="system-emoji">✍️</span>
+                        <div class="system-badges">
+                            <span class="badge-pill">5 Guías Premium</span>
+                            <span class="badge-pill">5 Prompts Maestros</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="system-title">Sistema de Creación de Contenido con IA</h3>
+                    <p class="system-desc">
+                        Aprende a crear contenido utilizando Inteligencia Artificial. Genera ideas, guiones persuasivos, autoridad y calendarios sostenibles.
+                    </p>
+
+                    <div class="system-footer">
+                        <button onclick="openModal('contenido')" class="btn btn-secondary w-full">
+                            <span>Explorar Sistema</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PREVIEW -->
+    <section class="section" id="vista-previa">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Muestra Editorial</span>
+                <h2 class="section-title">Vista previa</h2>
+                <p class="section-description">
+                    Echa un vistazo a la calidad de diseño, claridad y estructura de nuestras guías y Prompts Maestros.
+                </p>
+            </div>
+
+            <!-- Gallery Cards Carousel / Showcase -->
+            <div class="preview-gallery-grid">
+                <!-- Gallery 1: Guide Cover -->
+                <div class="gallery-card">
+                    <div class="gallery-preview-frame cover-frame">
+                        <span class="frame-tag">PORTADA DE GUÍA</span>
+                        <div class="mini-cover">
+                            <span class="vol-label">VOL. 01</span>
+                            <h3>Validación de Ofertas Irresistibles</h3>
+                            <p>Manual de Implementación Práctica</p>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Guías en PDF de Alta Calidad</h4>
+                        <p>Diseñadas para una lectura cómoda, limpia y profesional.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 2: Internal Page -->
+                <div class="gallery-card">
+                    <div class="gallery-preview-frame page-frame">
+                        <span class="frame-tag">PÁGINA INTERNA</span>
+                        <div class="mini-page-content">
+                            <div class="mini-line title">Estructura del Método Arcadia</div>
+                            <div class="mini-line text">1. Define el perfil de cliente ideal.</div>
+                            <div class="mini-line text">2. Ejecuta el Prompt Maestro de investigación.</div>
+                            <div class="mini-box">Variables de contexto para ChatGPT...</div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Metodología Paso a Paso</h4>
+                        <p>Instrucciones directas sin rodeos conceptuales.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 3: Prompt Maestro Page -->
+                <div class="gallery-card">
+                    <div class="gallery-preview-frame prompt-frame">
+                        <span class="frame-tag">PROMPT MAESTRO</span>
+                        <div class="mini-prompt-content">
+                            <div class="prompt-header-mini">🤖 Prompt Maestro #03</div>
+                            <div class="prompt-code-mini">
+                                [CONTEXTO]: Actúa como consultor sénior...<br>
+                                [OBJETIVO]: Diseñar la secuencia de lanzamiento...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Prompts Listos para Copiar</h4>
+                        <p>Diseñados para obtener respuestas precisas y profesionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: HOW IT WORKS -->
+    <section class="section section-gray" id="como-funciona">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">El Proceso</span>
+                <h2 class="section-title">Cómo funciona</h2>
+                <p class="section-description">
+                    Un camino simple y transparente desde tu registro hasta los resultados concretos.
+                </p>
+            </div>
+
+            <!-- Flow Cards Connected -->
+            <div class="flow-steps-grid">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <h4 class="flow-title">Compra</h4>
+                    <p class="flow-desc">Realiza tu pago único y seguro.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <h4 class="flow-title">Accede al Área de Miembros</h4>
+                    <p class="flow-desc">Ingresa a tu panel privado.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <h4 class="flow-title">Abre una Guía</h4>
+                    <p class="flow-desc">Selecciona el módulo a estudiar.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <h4 class="flow-title">Lee el método paso a paso</h4>
+                    <p class="flow-desc">Entiende la lógica del proceso.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">5</div>
+                    <h4 class="flow-title">Copia el Prompt Maestro</h4>
+                    <p class="flow-desc">Copia el texto del especialista.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step">
+                    <div class="flow-number">6</div>
+                    <h4 class="flow-title">Utilízalo en ChatGPT</h4>
+                    <p class="flow-desc">Pega y ajusta tus datos.</p>
+                </div>
+
+                <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
+                <div class="flow-step flow-step-highlight">
+                    <div class="flow-number highlight">7</div>
+                    <h4 class="flow-title">Obtén resultados</h4>
+                    <p class="flow-desc">Aplica las respuestas en tu negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: WHO IS THIS FOR -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Perfil de Miembros</span>
+                <h2 class="section-title">¿Para quién es Arcadia?</h2>
+                <p class="section-description">
+                    Creado para quienes buscan métodos prácticos y acelerar la creación de proyectos.
+                </p>
+            </div>
+
+            <div class="grid grid-3 gap-md">
+                <div class="card persona-card">
+                    <span class="persona-tag">🚀</span>
+                    <h4 class="persona-name">Emprendedores</h4>
+                    <p class="persona-text">Lanza tus proyectos y valida ofertas en tiempo récord.</p>
+                </div>
+
+                <div class="card persona-card">
+                    <span class="persona-tag">💻</span>
+                    <h4 class="persona-name">Freelancers</h4>
+                    <p class="persona-text">Escala la calidad y velocidad de entregables para tus clientes.</p>
+                </div>
+
+                <div class="card persona-card">
+                    <span class="persona-tag">📊</span>
+                    <h4 class="persona-name">Consultores</h4>
+                    <p class="persona-text">Crea metodologías y diagnósticos estructurados con ayuda de IA.</p>
+                </div>
+
+                <div class="card persona-card">
+                    <span class="persona-tag">🏢</span>
+                    <h4 class="persona-name">Agencias</h4>
+                    <p class="persona-text">Estandariza los procesos de tu equipo con Prompts Maestros.</p>
+                </div>
+
+                <div class="card persona-card">
+                    <span class="persona-tag">🎬</span>
+                    <h4 class="persona-name">Creadores de Contenido</h4>
+                    <p class="persona-text">Mantén una presencia constante sin bloqueo creativo.</p>
+                </div>
+
+                <div class="card persona-card">
+                    <span class="persona-tag">🏪</span>
+                    <h4 class="persona-name">Pequeñas Empresas</h4>
+                    <p class="persona-text">Optimiza marketing y operaciones sin sobrecostos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: WHY ARCADIA -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Ventajas Clave</span>
+                <h2 class="section-title">Por qué Arcadia</h2>
+                <p class="section-description">
+                    Diseñado con un enfoque metodológico limpio y libre de distracciones.
+                </p>
+            </div>
+
+            <div class="grid grid-2 gap-lg">
+                <div class="card why-card">
+                    <div class="why-number">01</div>
+                    <div>
+                        <h3 class="why-card-title">Contenido práctico</h3>
+                        <p class="why-card-desc">Guías redactadas con enfoque en la acción directa y resolución de problemas.</p>
+                    </div>
+                </div>
+
+                <div class="card why-card">
+                    <div class="why-number">02</div>
+                    <div>
+                        <h3 class="why-card-title">Especialistas IA</h3>
+                        <p class="why-card-desc">Prompts Maestros creados para comportarse como expertos en su área.</p>
+                    </div>
+                </div>
+
+                <div class="card why-card">
+                    <div class="why-number">03</div>
+                    <div>
+                        <h3 class="why-card-title">Biblioteca en crecimiento</h3>
+                        <p class="why-card-desc">Acceso a todas las adiciones futuras sin pagar suscripciones recurrentes.</p>
+                    </div>
+                </div>
+
+                <div class="card why-card">
+                    <div class="why-number">04</div>
+                    <div>
+                        <h3 class="why-card-title">Resultados inmediatos</h3>
+                        <p class="why-card-desc">Copia, pega y ejecuta en ChatGPT desde el primer minuto de tu membresía.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: ROADMAP -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Hoja de Ruta</span>
+                <h2 class="section-title">La biblioteca continúa creciendo</h2>
+                <p class="section-description">
+                    Nuevos sistemas en constante investigación y maquetación editorial.
+                </p>
+            </div>
+
+            <div class="roadmap-card-wrapper">
+                <div class="roadmap-grid">
+                    <div class="roadmap-item active">
+                        <span class="roadmap-icon">✅</span>
+                        <span class="roadmap-text">Sistema de Lanzamiento de Negocios</span>
+                        <span class="roadmap-pill active">Disponible</span>
+                    </div>
+
+                    <div class="roadmap-item active">
+                        <span class="roadmap-icon">✅</span>
+                        <span class="roadmap-text">Sistema de Creación de Contenido con IA</span>
+                        <span class="roadmap-pill active">Disponible</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de Ventas con IA</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de Marketing Digital</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de Branding</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de Automatización</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de Marca Personal</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de YouTube</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+
+                    <div class="roadmap-item locked">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Sistema de E-commerce</span>
+                        <span class="roadmap-pill locked">Próximamente</span>
+                    </div>
+                </div>
+
+                <p class="roadmap-note">
+                    ✨ Todos los nuevos sistemas estarán disponibles para los miembros de Arcadia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: PRICING -->
+    <section class="section section-gray" id="precios">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">Membresía Vitalicia</span>
+                <h2 class="section-title">Accede hoy a la Biblioteca</h2>
+            </div>
+
+            <div class="pricing-card-container">
+                <div class="dark-pricing-card">
+                    
+                    <div class="pricing-header">
+                        <span class="launch-badge">🔥 Oferta de Lanzamiento</span>
+                        <h3 class="pricing-title">Arcadia Library</h3>
+                        <p class="pricing-subtitle">Acceso completo a la biblioteca premium.</p>
+                    </div>
+
+                    <div class="pricing-checklist">
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>15 Guías Premium</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>15 Prompts Maestros</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>2 Sistemas completos</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>Área de miembros</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>Acceso inmediato</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>Compatible con ChatGPT</span></div>
+                        <div class="p-check-item"><i data-lucide="check"></i> <span>Todas las futuras actualizaciones incluidas</span></div>
+                    </div>
+
+                    <div class="price-display-block">
+                        <div class="old-price">US$ 49.90</div>
+                        <div class="current-price">US$ 19.90</div>
+                        <div class="price-terms">
+                            <span>Pago único</span> • <span>Acceso de por vida</span> • <span>Sin mensualidades</span>
+                        </div>
+                    </div>
+
+                    <!-- Highlighted Info Box -->
+                    <div class="info-box-highlight">
+                        <p><strong>💡 Precio especial de lanzamiento.</strong></p>
+                        <p>La biblioteca seguirá creciendo con nuevos sistemas.</p>
+                        <p>Los miembros actuales recibirán todas las futuras actualizaciones sin coste adicional.</p>
+                        <p>Cuando nuevos sistemas sean añadidos el precio aumentará.</p>
+                    </div>
+
+                    <div class="pricing-cta-action">
+                        <button onclick="triggerCheckout()" class="btn btn-primary btn-lg w-full shadow-elevation">
+                            <span>Quiero acceder ahora</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="security-badges">
+                        <span>🔒 Pago seguro</span>
+                        <span>⚡ Acceso inmediato</span>
+                        <span>🛡 Garantía de 7 días</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: FAQ -->
+    <section class="section" id="faq">
+        <div class="container max-w-4xl">
+            <div class="section-header text-center">
+                <span class="section-kicker">Claridad Total</span>
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Necesito experiencia?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Todas las guías están diseñadas de forma clara y explicativa para que cualquier emprendedor o profesional pueda implementarlas inmediatamente sin conocimientos previos de programación o ingeniería de prompts.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo recibo el acceso?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>De forma automática e inmediata. Tras completar tu registro, recibirás un correo electrónico con tus credenciales personales para ingresar al Área de Miembros de Arcadia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Funciona con ChatGPT?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, es 100% compatible con ChatGPT (gratuito y Plus), Claude, Gemini y cualquier otro modelo de IA generativa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Las actualizaciones están incluidas?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. Como miembro actual, recibirás todas las guías, Prompts Maestros y nuevos sistemas que añadamos a la biblioteca sin volver a pagar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Debo volver a pagar?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. El pago de US$ 19.90 es único y te otorga acceso de por vida sin mensualidades ni tarifas recurrentes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Existe garantía?</span>
+                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, cuentas con una garantía de satisfacción de 7 días. Si el contenido no cumple con tus expectativas, te devolvemos el 100% de tu dinero sin preguntas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section">
+        <div class="container text-center max-w-3xl">
+            <h2 class="final-headline">
+                Empieza hoy. <span class="serif-accent">Construye con Inteligencia Artificial.</span>
+            </h2>
+            <p class="final-desc">
+                Únete a Arcadia y obtén acceso inmediato a una biblioteca premium creada para emprendedores que quieren utilizar Inteligencia Artificial para construir negocios reales.
+            </p>
+            <div class="final-action">
+                <a href="#precios" class="btn btn-primary btn-lg shadow-elevation">
+                    <span>Acceder Ahora por US$19.90</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo">
+                    <span class="logo-mark">A</span>
+                    <span class="logo-text">Arcadia</span>
+                </a>
+                <p class="footer-tagline">Biblioteca Premium de Guías & Prompts Maestros</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Soporte</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+        <div class="container footer-copy">
+            <p>Copyright © Arcadia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SYSTEM EXPLORER MODAL -->
+    <div class="modal-overlay" id="system-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <span class="modal-emoji" id="modal-emoji">🚀</span>
+                <div>
+                    <h3 class="modal-title" id="modal-title">Sistema de Lanzamiento de Negocios</h3>
+                    <p class="modal-sub" id="modal-sub">10 Guías Premium • 10 Prompts Maestros</p>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <a href="#precios" onclick="closeModal()" class="btn btn-primary w-full text-center">
+                    <span>Quiero Acceso a este Sistema</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
