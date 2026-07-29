@@ -197,6 +197,6 @@ function showToast(msg) {
 function triggerCheckout() {
     showToast('Redirigiendo al Área de Miembros de Arcadia (Pago Seguro US$ 19.90)...');
     setTimeout(() => {
-        alert('🎉 ¡Bienvenido a Arcadia! Aquí el usuario sería redirigido a la pasarela de pago seguro (Stripe/Hotmart/Checkout) para obtener su acceso inmediato de US$ 19.90.');
-    }, 1200);
+        window.open('https://pay.hotmart.com/C106916076W?checkoutMode=10', '_blank');
+    }, 2000);
 }
