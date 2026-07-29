@@ -1,48 +1,24 @@
-# Arcadia Editorial • Landing Page & Member Library
+# Arcadia Editorial • Biblioteca Digital Educativa
 
-Landing page premium e responsiva para a **Arcadia Editorial**, focada na apresentação e conversão para acesso à biblioteca digital de guías e Prompts Maestros de Inteligência Artificial.
+**Arcadia Editorial** es una plataforma premium diseñada para ayudar a emprendedores, freelancers y empresas a crear, lanzar y hacer crecer negocios utilizando Inteligencia Artificial.
 
-## 🚀 Tecnologias Utilizadas
+---
 
-- **HTML5**: Estrutura semântica e SEO otimizado.
-- **CSS3 Vanilla**: Design system customizado, variáveis CSS, animações fluidas, efeitos de vidro (glassmorphism) e responsividade completa.
-- **JavaScript (ES6+)**: Controle de rolagem, modais interativos, efeitos de navegação e componentes dinâmicos.
-- **Lucide Icons & Google Fonts**: Ícones modernos e tipografia editorial (`Newsreader` & `Plus Jakarta Sans`).
+## 🌟 Características Principales
 
-## 📁 Estrutura do Projeto
+- **Guías Premium**: Manuales prácticos paso a paso con metodología de alto rendimiento.
+- **Prompts Maestros**: Comandos avanzados de ingeniería de contexto listos para utilizar en ChatGPT.
+- **Sistemas Operativos**: Frameworks completos para Lanzamiento de Negocios y Creación de Contenido.
+- **Diseño Editorial Premium**: Interfaz limpia, responsiva y orientada a la mejor experiencia de lectura.
 
-```
-/
-├── index.html       # Página principal (Landing Page Arcadia)
-├── login.html       # Interface de login/autenticação
-├── styles.css       # Estilos CSS principais
-├── script.js        # Lógica interativa e controle de rolagem
-├── vercel.json      # Configuração de rotas limpas na Vercel
-└── .gitignore       # Arquivos ignorados pelo Git
-```
+---
 
-## 📤 Como subir no GitHub e publicar na Vercel
+## 🛠️ Tecnologías
 
-### Passo 1: Subir no GitHub
+- **HTML5**: Estructura semántica.
+- **CSS3 (Vanilla)**: Variables CSS, diseño responsivo y efectos visuales modernos.
+- **JavaScript (ES6+)**: Control de navegación, modais interativos e otimização de rolagem.
 
-1. Acesse o [GitHub](https://github.com/) e crie um **Novo Repositório** (ex: `arcadia-editorial`).
-2. No seu computador (na pasta do projeto), abra o terminal (Git Bash ou Prompt de Comando) e execute:
+---
 
-```bash
-git init
-git add .
-git commit -m "Initial commit - Arcadia Editorial Landing Page"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/arcadia-editorial.git
-git push -u origin main
-```
-
-### Passo 2: Publicar na Vercel
-
-1. Acesse a [Vercel](https://vercel.com/) e faça login com sua conta do GitHub.
-2. Clique em **"Add New..."** → **"Project"**.
-3. Selecione o repositório `arcadia-editorial` que você acabou de subir.
-4. Em *Framework Preset*, deixe como **Other** / **Static Site**.
-5. Clique em **Deploy**.
-
-Pronto! Em poucos segundos seu site estará online com SSL gratuito e domínio da Vercel.
+© Arcadia Editorial. Todos los derechos reservados.
