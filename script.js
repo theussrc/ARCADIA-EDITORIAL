@@ -195,8 +195,5 @@ function showToast(msg) {
 }
 
 function triggerCheckout() {
-    showToast('Redirigiendo al Área de Miembros de Arcadia (Pago Seguro US$ 19.90)...');
-    setTimeout(() => {
-        window.open('https://pay.hotmart.com/C106916076W?checkoutMode=10', '_blank');
-    }, 2000);
+    window.location.href = 'https://pay.hotmart.com/C106916076W?checkoutMode=10';
 }
