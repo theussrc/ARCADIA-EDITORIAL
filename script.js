@@ -195,5 +195,11 @@ function showToast(msg) {
 }
 
 function triggerCheckout() {
+        if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', {
+            value: 19.90,
+            currency: 'USD'
+        });
+    }
     window.location.href = 'https://pay.hotmart.com/C106916076W?checkoutMode=10';
 }
