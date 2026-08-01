@@ -203,11 +203,14 @@ function triggerCheckout() {
     }
 
         // TikTok Pixel
-    if (typeof ttq !== 'undefined') {
-        ttq.track('InitiateCheckout', {
-            value: 19.90,
-            currency: 'USD'
-        });
-    }
+if (typeof ttq !== 'undefined') {
+    ttq.track('InitiateCheckout', {
+        content_id: 'arcadia_library',
+        content_type: 'product',
+        content_name: 'Arcadia Library',
+        value: 19.90,
+        currency: 'USD'
+    });
+}
     window.location.href = 'https://pay.hotmart.com/C106916076W?checkoutMode=10';
 }
