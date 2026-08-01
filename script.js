@@ -214,3 +214,30 @@ if (typeof ttq !== 'undefined') {
 }
     window.location.href = 'https://pay.hotmart.com/C106916076W?checkoutMode=10';
 }
+const heroVideo = document.getElementById("heroVideo");
+const videoOverlay = document.getElementById("videoOverlay");
+const heroContainer = document.querySelector(".hero-video");
+
+if(heroVideo){
+
+    videoOverlay.addEventListener("click",()=>{
+
+        heroVideo.play();
+
+        heroContainer.classList.add("playing");
+
+        heroVideo.setAttribute("controls","controls");
+
+    });
+
+    heroVideo.addEventListener("ended",()=>{
+
+        heroContainer.classList.remove("playing");
+
+        heroVideo.removeAttribute("controls");
+
+        heroVideo.load();
+
+    });
+
+}
